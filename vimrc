@@ -1,3 +1,4 @@
+" Load bundled plugins {{{1
 call pathogen#infect()
 call pathogen#helptags()
 
