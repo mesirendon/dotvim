@@ -3,7 +3,7 @@ My vim config
 
 Installation
 ------------
-`git clone git@github.com:SealOvBelial/dotvim.git ~/.vim`
+`git clone git clone git://github.com/SealOvBelial/dotvim.git ~/.vim`
 
 Create SymLinks
 ---------------
