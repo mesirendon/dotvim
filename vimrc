@@ -1,3 +1,6 @@
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
+
+set hidden
+set number
 syntax on
-filetype plugin indent on
