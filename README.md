@@ -40,7 +40,7 @@ Upgrading ALL the bundled plugins
 ```
 cd ~/.vim
 git submodule foreach git pull origin master
-´´´
+```
 
 License
 -------
