@@ -26,3 +26,7 @@ cd ~/.vim
 git submodule init
 git submodule update
 ```
+
+License
+-------
+Distributed under the same terms as Vim itself. See `:help license`.
