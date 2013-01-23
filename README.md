@@ -27,6 +27,20 @@ git submodule init
 git submodule update
 ```
 
+Upgrading bundled plugins
+-------------------------
+Upgrading a single bundled plugin
+```
+cd ~/.vim/bundle/{plugin}
+git pull origin master
+```
+
+Upgrading ALL the bundled plugins
+```
+cd ~/.vim
+git submodule foreach git pull origin master
+´´´
+
 License
 -------
 Distributed under the same terms as Vim itself. See `:help license`.
