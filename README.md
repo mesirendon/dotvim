@@ -10,6 +10,15 @@ Create SymLinks
 ---------------
 `ln -s ~/.vim/vimrc ~/.vimrc`
 
+Adding a new submodule
+----------------------
+It's highly recommended to add submodules from repos that consider Pathogen as the main installer. For instance here is the way to add new submodules:
+
+```
+cd ~/.vim
+git submodule add git@github.com:{user}/{repo}.git bundle/{suitable-name}
+```
+
 Updating submodules
 -------------------
 ```
