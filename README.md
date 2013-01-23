@@ -8,3 +8,4 @@ Installation
 
 Create SymLinks
 ---------------
+`ln -s ~/.vim/vimrc ~/.vimrc`
