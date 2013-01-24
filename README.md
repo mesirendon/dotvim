@@ -56,6 +56,7 @@ bundle/
 ├── commentary
 ├── fugitive
 ├── nerdtree
+├── perlsupport
 ├── repeat
 ├── snipmate
 ├── solarized
