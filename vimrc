@@ -15,6 +15,8 @@ let Tlist_Use_Right_Window = 1
 map <F3> :NERDTreeToggle<CR><CR>
 map <F4> :TlistToggle<CR><CR>
 
+filetype plugin on
+
 set hidden
 set number
 syntax enable
