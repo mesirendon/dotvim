@@ -7,7 +7,6 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 autocmd vimenter * NERDTree
-autocmd FileType perl set commentstring=#\ %s
 
 set hidden
 set number
