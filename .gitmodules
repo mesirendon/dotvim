@@ -25,3 +25,6 @@
 [submodule "bundle/aligner"]
 	path = bundle/aligner
 	url = git@github.com:tsaleh/vim-align.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = git@github.com:vim-scripts/taglist.vim.git
