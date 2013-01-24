@@ -6,6 +6,8 @@ if $COLORTERM == 'gnome-terminal'
 	set t_Co=256
 endif
 
+autocmd vimenter * NERDTree
+
 set hidden
 set number
 syntax enable
