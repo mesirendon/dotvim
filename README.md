@@ -4,7 +4,7 @@ This is [my](http://twitter.com/mesirendon) personal vim config. It's built from
 This build is created to improve my own personal experience with Perl, Ruby and PHP, as well as JavaScript and CSS.
 
 It looks something like this:
-![my vim](https://github.com/SealOvBelial/dotvim/blob/master/screenshot01.png)
+![my vim](https://raw.github.com/SealOvBelial/dotvim/master/screenshot01.png)
 
 Installation
 ------------
