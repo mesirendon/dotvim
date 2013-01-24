@@ -8,6 +8,8 @@ endif
 
 autocmd vimenter * NERDTree
 
+map <F3> :NERDTreeTabsToggle<CR>
+
 set hidden
 set number
 syntax enable
