@@ -45,6 +45,23 @@ cd ~/.vim
 git submodule foreach git pull origin master
 ```
 
+Current submodules
+------------------
+List of current submodules:
+```
+bundle/
+├── aligner
+├── colorschemes
+├── commentary
+├── fugitive
+├── nerdtree
+├── repeat
+├── snipmate
+├── solarized
+├── surround
+└── taglist
+```
+
 License
 -------
 Distributed under the same terms as Vim itself. See `:help license`.
