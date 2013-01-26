@@ -98,3 +98,6 @@ set listchars=tab:>\ ,trail:.,nbsp:.
 "
 " Always assume Unix-style line endings
 set fileformats=unix
+"
+" Disabling vim swap files
+set noswapfile
