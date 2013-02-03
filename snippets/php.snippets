@@ -1,7 +1,11 @@
 snippet php
+	<?php ${1} ?>
+snippet phhp
 	<?php
 	${1}
 	?>
+snippet pheco
+	<?php echo ${1}; ?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -214,6 +218,12 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet ayy
+	array(${1});
+snippet ay
+	array(${1})
+snippet hsh
+	${1:hash} => ${2:value}
 
 # Some useful Unicode entities
 # Non-Breaking Space
