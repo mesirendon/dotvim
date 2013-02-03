@@ -13,6 +13,7 @@ Installation
 Create SymLinks
 ---------------
 `ln -s ~/.vim/vimrc ~/.vimrc`
+`ln -s ~/.vim/snippets ~/.vim/bundle/snipmate/snippets`
 
 Adding a new submodule
 ----------------------
@@ -61,7 +62,9 @@ bundle/
 ├── snipmate
 ├── solarized
 ├── surround
-└── taglist
+├── taglist
+├── textobj-indent
+└── textobj-user
 ```
 
 License
