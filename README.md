@@ -13,7 +13,6 @@ Installation
 Create SymLinks
 ---------------
 `ln -s ~/.vim/vimrc ~/.vimrc`
-`ln -s ~/.vim/snippets ~/.vim/bundle/snipmate/snippets`
 
 Adding a new submodule
 ----------------------
