@@ -16,9 +16,9 @@ map <F4> :TlistToggle<CR><CR>
 filetype plugin on
 
 set hidden
-set background=dark
-let g:solarized_termcolors=256
-colorscheme xoria256 
+" set background=dark
+" let g:solarized_termcolors=256
+colorscheme 256-grayvim
 
 " Use Vim settings, rather than Vi settings
 set nocompatible
