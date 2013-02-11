@@ -40,3 +40,6 @@
 [submodule "bundle/textobj-user"]
 	path = bundle/textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
+[submodule "bundle/omnicpp"]
+	path = bundle/omnicpp
+	url = git@github.com:vim-scripts/OmniCppComplete.git

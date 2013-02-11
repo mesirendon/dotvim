@@ -3,7 +3,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 if $COLORTERM == 'gnome-terminal'
-	set t_Co=256
+    set t_Co=256
 endif
 
 autocmd vimenter * NERDTree
@@ -15,9 +15,13 @@ map <F4> :TlistToggle<CR><CR>
 
 filetype plugin on
 
+" Highlight syntax
+syntax on
+
 set hidden
-" set background=dark
-" let g:solarized_termcolors=256
+
+let g:solarized_termcolors=256
+set background=light
 colorscheme 256-grayvim
 
 " Use Vim settings, rather than Vi settings
@@ -86,10 +90,7 @@ set ruler
 " Command line is 2 lines, so it's easier to type complex commands
 set cmdheight=2
 
-" Highlight syntax
-syntax on
-
-" " Some nice colorscheme
+" Some nice colorscheme
 " colors evening
 "
 " Make constants readable on projector as well
