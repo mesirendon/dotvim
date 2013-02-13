@@ -43,3 +43,6 @@
 [submodule "bundle/omnicpp"]
 	path = bundle/omnicpp
 	url = git@github.com:vim-scripts/OmniCppComplete.git
+[submodule "smart-tabs"]
+	path = smart-tabs
+	url = git@github.com:gustavo-hms/vim-smart-tabs.git

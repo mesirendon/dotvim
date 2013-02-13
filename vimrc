@@ -22,7 +22,7 @@ set hidden
 
 let g:solarized_termcolors=256
 set background=light
-colorscheme 256-grayvim
+colorscheme desert256
 
 " Use Vim settings, rather than Vi settings
 set nocompatible
