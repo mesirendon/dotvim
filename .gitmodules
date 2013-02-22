@@ -46,3 +46,6 @@
 [submodule "smart-tabs"]
 	path = smart-tabs
 	url = git@github.com:gustavo-hms/vim-smart-tabs.git
+[submodule "bundle/autoclose"]
+	path = bundle/autoclose
+	url = git@github.com:Townk/vim-autoclose.git

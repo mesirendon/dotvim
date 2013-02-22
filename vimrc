@@ -22,7 +22,7 @@ set hidden
 
 let g:solarized_termcolors=256
 set background=light
-colorscheme desert256
+colorscheme 256-grayvim
 
 " Use Vim settings, rather than Vi settings
 set nocompatible
@@ -42,12 +42,18 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Tab maps
+if version >= 700
+    map <C-t> <Esc>:tabnew<CR>
+    map <C-F4> <Esc>:tabclose<CR>
+endif
+
 " Turn on line numbers
 set number
 set numberwidth=5
 
-" Set mapleader to º for my Spanish keyboard
-let mapleader = 'º'
+" Set mapleader to ç for my Spanish keyboard
+let mapleader = 'ç'
 
 " Tabs are displayed as 4 characters wide
 set tabstop=4
