@@ -16,7 +16,7 @@ map <F4> :TlistToggle<CR><CR>
 filetype plugin on
 
 " Highlight syntax
-syntax on
+syntax enable
 
 set hidden
 
