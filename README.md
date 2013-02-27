@@ -52,10 +52,13 @@ List of current submodules:
 bundle/
 ├── ack
 ├── aligner
+├── autoclose
 ├── colorschemes
 ├── commentary
+├── easymotion
 ├── fugitive
 ├── nerdtree
+├── omnicpp
 ├── perlsupport
 ├── repeat
 ├── snipmate
