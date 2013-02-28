@@ -53,7 +53,7 @@ set number
 set numberwidth=5
 
 " Set mapleader to ç for my Spanish keyboard
-let mapleader = 'ç'
+let mapleader = "ç"
 
 " Tabs are displayed as 4 characters wide
 set tabstop=4
