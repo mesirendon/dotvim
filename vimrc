@@ -45,7 +45,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Tab maps
 if version >= 700
     map <C-S-n> <Esc>:tabnew<CR>
-    map <C-S-w> <Esc>:tabclose<CR>
+    map <C-S-q> <Esc>:tabclose<CR>
 endif
 
 " Turn on line numbers
