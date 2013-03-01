@@ -25,8 +25,12 @@ syntax enable
 set hidden
 
 let g:solarized_termcolors=256
-set background=light
-colorscheme 256-grayvim
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 
 " Use Vim settings, rather than Vi settings
 set nocompatible
@@ -48,8 +52,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Tab maps
 if version >= 700
-    map <C-S-n> <Esc>:tabnew<CR>
-    map <C-S-q> <Esc>:tabclose<CR>
+    map <C-S-F12> <Esc>:tabnew<CR>
+    map <C-F12> <Esc>:tabclose<CR>
 endif
 
 " Turn on line numbers
