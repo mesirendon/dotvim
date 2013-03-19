@@ -26,9 +26,9 @@ set hidden
 
 let g:solarized_termcolors=256
 if has('gui_running')
-    set background=light
-else
     set background=dark
+else
+    set background=light
 endif
 colorscheme solarized
 
