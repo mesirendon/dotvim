@@ -18,6 +18,7 @@ map <F3> :NERDTreeToggle<CR><CR>
 map <F4> :TlistToggle<CR><CR>
 
 filetype plugin on
+filetype indent on
 
 " Highlight syntax
 syntax enable
