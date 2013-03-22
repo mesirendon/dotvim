@@ -20,6 +20,11 @@ map <F4> :TlistToggle<CR><CR>
 filetype plugin on
 filetype indent on
 
+" Latex support
+set runtimepath+=/usr/share/vim/addons
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor="latex"
+
 " Highlight syntax
 syntax enable
 
@@ -117,3 +122,4 @@ set fileformats=unix
 
 " Disabling vim swap files
 set noswapfile
+

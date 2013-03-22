@@ -1,6 +1,6 @@
 My vim config
 =============
-This is [my](http://twitter.com/mesirendon) personal vim config. It's built from [Tpope's Pathogen](https://github.com/tpope/vim-pathogen) and some bundles. Take it under your own risk.
+This is [my](http://twitter.com/mesirendon) [personal](https://github.com/SealOvBelial) vim config. It's built from [Tpope's Pathogen](https://github.com/tpope/vim-pathogen) and some bundles. Take it under your own risk.
 This build is created to improve my own personal experience with Perl, Ruby and PHP, as well as JavaScript and CSS.
 
 It looks something like this:
@@ -45,6 +45,38 @@ cd ~/.vim
 git submodule foreach git pull origin master
 ```
 
+Latex integration
+-----------------
+In order to do a proper integration with LaTeX, please install the latex support for vim as follows:
+```
+sudo apt-get install vim-latex vim-addons-manager
+```
+And that's all.
+
+Just in case: this LaTeX submodule isn't a git submodule. I you run: `vim-addons -w install latex-suite`, this will create the following folders in the `.vim` folder:
+```
+.vim/
+├── compiler
+├── doc
+├── ftplugin
+│   └── latex-suite
+│       ├── dictionaries
+│       ├── macros
+│       ├── packages
+│       └── templates
+├── indent
+└── plugin
+```
+
+I highly recommend you to delete them and use the ones under the `bundle/latex` folder... or if you want to improve your own latex scripts, replace the content in `bundle/latex` with those.
+
+And also be sure that your vimrc file has this lines:
+```
+set runtimepath+=/usr/share/vim/addons
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor="latex"
+```
+
 Current submodules
 ------------------
 List of current submodules:
@@ -53,13 +85,18 @@ bundle/
 ├── ack
 ├── aligner
 ├── autoclose
+├── calendar
 ├── colorschemes
 ├── commentary
+├── CtrlP
 ├── easymotion
 ├── fugitive
+├── latex
+├── nerdcommenter
 ├── nerdtree
 ├── omnicpp
 ├── perlsupport
+├── pwrline
 ├── repeat
 ├── snipmate
 ├── solarized
