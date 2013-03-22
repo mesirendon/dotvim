@@ -55,3 +55,9 @@
 [submodule "bundle/CtrlP"]
 	path = bundle/CtrlP
 	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/calendar"]
+	path = bundle/calendar
+	url = git@github.com:mattn/calendar-vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
