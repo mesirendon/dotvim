@@ -1,7 +1,7 @@
 My vim config
 =============
 This is [my](http://twitter.com/mesirendon) [personal](https://github.com/SealOvBelial) vim config. It's built from [Tpope's Pathogen](https://github.com/tpope/vim-pathogen) and some bundles. Take it under your own risk.
-This build is created to improve my own personal experience with Perl, Ruby and PHP, as well as JavaScript and CSS.
+This build is created to improve my own personal experience with LaTeX, Perl, Ruby and PHP, as well as JavaScript and CSS.
 
 It looks something like this:
 ![my vim](https://raw.github.com/SealOvBelial/dotvim/master/screenshot01.png)

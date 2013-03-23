@@ -24,6 +24,7 @@ filetype indent on
 set runtimepath+=/usr/share/vim/addons
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor="latex"
+let g:Tex_CompileRule_pdf="pdflatex -interaction=nonstopmode $*"
 
 " Highlight syntax
 syntax enable
