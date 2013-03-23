@@ -113,3 +113,40 @@ snippet section
 	${1:Section}~\ref{${2:sec:}}${3}
 snippet page
 	${1:page}~\pageref{${2}}${3}
+snippet docl For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
+	\documentclass{article}
+snippet docl For articles with the IEEE Transactions format.
+	\documentclass{IEEEtran}
+snippet docl A class for proceedings based on the article class.
+	\documentclass{proc}
+snippet docl Is as small as it can get. It only sets a page size and a base font. It is mainly used for debugging purposes.
+	\documentclass{minimal}
+snippet docl For longer reports containing several chapters, small books, thesis, ...
+	\documentclass{report}
+snippet docl For real books.
+	\documentclass{book}
+snippet docl For slides. The class uses big sans serif letters.
+	\documentclass{slides}
+snippet docl For changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it
+	\documentclass{memoir}
+snippet docl For writing letters.
+	\documentclass{letter}
+snippet docl For writing presentations
+	\documentclass{beamer}
+snippet pack
+	\usepackage${2:[options]}{${1:package}}${3}
+snippet authme
+	\author{
+		Angel Mesías Rendón Sánchez - \texttt{amrendonsa@unal.edu.co}\\
+		Ingeniería de Sistemas\\
+		Departamento de Ingeniería de Sistemas e Ingeniería Industrial\\
+		Facultad de Ingeniería\\
+		Universidad Nacional de Colombia\\
+		Bogotá, Colombia
+	}
+snippet doctit
+	\title{${1:title goes here}}${2}
+snippet mktit
+	\maketitle
+snippet lang
+	\selectlanguage{${1:spanish}}${2}
