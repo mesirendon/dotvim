@@ -34,10 +34,10 @@ set hidden
 let g:solarized_termcolors=256
 if has('gui_running')
     set background=dark
+    colorscheme solarized
 else
-    set background=light
+    colorscheme xoria
 endif
-colorscheme solarized
 
 " Use Vim settings, rather than Vi settings
 set nocompatible
@@ -46,16 +46,16 @@ set nocompatible
 set modifiable
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+nmap <silent> <Up>    :wincmd k<CR>
+nmap <silent> <Down>  :wincmd j<CR>
+nmap <silent> <Left>  :wincmd h<CR>
+nmap <silent> <Right> :wincmd l<CR>
 
 " Get out of my realm
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left>  :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up>    :echoe "Use k"<CR>
+"nnoremap <Down>  :echoe "Use j"<CR>
 
 " Tab maps
 if version >= 700
