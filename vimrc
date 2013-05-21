@@ -33,10 +33,13 @@ set hidden
 
 let g:solarized_termcolors=256
 if has('gui_running')
-    set background=dark
+    if has('gui_gtk2')
+        set guifont=Inconsolata\ 14
+    endif
+    set background=light
     colorscheme solarized
 else
-    colorscheme xoria
+    colorscheme matrix
 endif
 
 " Use Vim settings, rather than Vi settings
@@ -74,7 +77,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Insert 4 spaces instead of tabs
-set expandtab
+"set expandtab
 
 " Automatic indentation
 set autoindent
@@ -106,7 +109,7 @@ set colorcolumn=81
 set ruler
 
 " Command line is 2 lines, so it's easier to type complex commands
-set cmdheight=2
+set cmdheight=3
 
 " Some nice colorscheme
 " colors evening
@@ -116,7 +119,7 @@ set cmdheight=2
 
 " Always highlight tabs and trailing spaces.
 set list
-set listchars=tab:>\ ,trail:.,nbsp:.
+set listchars=tab:\|\ ,trail:.,nbsp:.
 
 " Always assume Unix-style line endings
 set fileformats=unix
