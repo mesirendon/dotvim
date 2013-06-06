@@ -34,7 +34,7 @@ set hidden
 let g:solarized_termcolors=256
 if has('gui_running')
     if has('gui_gtk2')
-        set guifont=Inconsolata\ 14
+        set guifont=Inconsolata\ 12
     endif
     set background=light
     colorscheme xoria256
@@ -53,6 +53,10 @@ nmap <silent> <Up>    :wincmd k<CR>
 nmap <silent> <Down>  :wincmd j<CR>
 nmap <silent> <Left>  :wincmd h<CR>
 nmap <silent> <Right> :wincmd l<CR>
+
+" Move tabs with alt + left|right
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 " Get out of my realm
 "nnoremap <Left>  :echoe "Use h"<CR>
