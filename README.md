@@ -53,7 +53,7 @@ sudo apt-get install vim-latex vim-addons-manager latex-mk
 ```
 And that's all.
 
-Just in case: this LaTeX submodule isn't a git submodule. I you run: `vim-addons -w install latex-suite`, this will create the following folders in the `.vim` folder:
+Just in case: this LaTeX submodule isn't a git submodule. Now you must run: `vim-addons -w install latex-suite`, this will create the following folders in the `.vim` folder:
 ```
 .vim/
 ├── compiler
