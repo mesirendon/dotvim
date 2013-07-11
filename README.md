@@ -49,7 +49,7 @@ Latex integration
 -----------------
 In order to do a proper integration with LaTeX, please install the latex support for vim as follows:
 ```
-sudo apt-get install vim-latex vim-addons-manager
+sudo apt-get install vim-latex vim-addons-manager latex-mk
 ```
 And that's all.
 
