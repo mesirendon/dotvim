@@ -37,7 +37,7 @@ if has('gui_running')
         set guifont=Inconsolata\ 12
     endif
     set background=light
-    colorscheme xoria256
+    colorscheme freya
 else
     colorscheme matrix
 endif
