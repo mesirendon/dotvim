@@ -2,8 +2,8 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" Set mapleader to ç for my Spanish keyboard
-let mapleader = "ç"
+" Set mapleader
+let mapleader = "\\"
 let g:EasyMotion_leader_key = '<Leader>'
 
 if $COLORTERM == 'gnome-terminal'
@@ -34,12 +34,12 @@ set hidden
 let g:solarized_termcolors=256
 if has('gui_running')
     if has('gui_gtk2')
-        set guifont=Inconsolata\ 12
+        set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
     endif
     set background=light
-    colorscheme freya
+    colorscheme xoria256
 else
-    colorscheme matrix
+    colorscheme xoria256
 endif
 
 " Use Vim settings, rather than Vi settings
