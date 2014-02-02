@@ -37,7 +37,7 @@ if has('gui_running')
         set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
     endif
     set background=light
-    colorscheme xoria256
+    colorscheme sift
 else
     colorscheme xoria256
 endif
