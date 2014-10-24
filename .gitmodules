@@ -64,3 +64,6 @@
 [submodule "bundle/pwrline"]
 	path = bundle/pwrline
 	url = git@github.com:Lokaltog/vim-powerline.git
+[submodule "bundle/coffee-script"]
+	path = bundle/coffee-script
+	url = git@github.com:kchmck/vim-coffee-script.git
