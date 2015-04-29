@@ -73,3 +73,6 @@
 [submodule "bundle/angular"]
 	path = bundle/angular
 	url = git@github.com:burnettk/vim-angular.git
+[submodule "bundle/jade-sintax"]
+	path = bundle/jade-sintax
+	url = git@github.com:digitaltoad/vim-jade.git
