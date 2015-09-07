@@ -76,3 +76,6 @@
 [submodule "bundle/jade-sintax"]
 	path = bundle/jade-sintax
 	url = git@github.com:digitaltoad/vim-jade.git
+[submodule "bundle/vim-gradle"]
+	path = bundle/vim-gradle
+	url = https://github.com/tfnico/vim-gradle.git
