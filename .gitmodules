@@ -79,3 +79,6 @@
 [submodule "bundle/vim-gradle"]
 	path = bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
+[submodule "bundle/vimvue"]
+	path = bundle/vimvue
+	url = git@github.com:posva/vim-vue.git
