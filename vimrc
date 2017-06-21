@@ -130,4 +130,3 @@ set fileformats=unix
 
 " Disabling vim swap files
 set noswapfile
-
