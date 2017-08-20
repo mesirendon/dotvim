@@ -14,6 +14,7 @@ autocmd vimenter * NERDTree
 
 let Tlist_Use_Right_Window = 1
 
+map <Esc>[B <Down>]
 map <F3> :NERDTreeToggle<CR><CR>
 map <F4> :TlistToggle<CR><CR>
 
@@ -75,13 +76,13 @@ set number
 set numberwidth=5
 
 " Tabs are displayed as 4 characters wide
-set tabstop=4
+set tabstop=2
 
 " Indentation is 4 spaces
-set shiftwidth=4
+set shiftwidth=2
 
 " Insert 4 spaces instead of tabs
-"set expandtab
+set expandtab
 
 " Automatic indentation
 set autoindent
@@ -107,7 +108,7 @@ set hlsearch
 " set guifont=Monaco
 
 " Draw a margin in the 81th column
-set colorcolumn=81
+"set colorcolumn=81
 
 " Show current line and column numbers
 set ruler
