@@ -77,11 +77,17 @@ POWERLEVEL9K_BATTERY_FOREGROUND="white"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 
+source "$HOME/.google-cloud-sdk/google-cloud-sdk/path.zsh.inc"
+
+autoload -U compinit compdef
+compinit
+source "$HOME/.google-cloud-sdk/google-cloud-sdk/completion.zsh.inc"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.rvm/bin:/opt/gams/gams24.8_linux_x64_64_sfx"
+export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.rvm/bin:/opt/gams/gams24.8_linux_x64_64_sfx:/usr/local/lib/antlr-4.7-complete.jar"
 
 # # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
