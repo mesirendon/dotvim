@@ -85,3 +85,6 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = git@github.com:tmhedberg/matchit.git
+[submodule "bundle/ridoc"]
+	path = bundle/ridoc
+	url = git@github.com:danchoi/ri.vim.git
