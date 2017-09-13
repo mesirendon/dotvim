@@ -88,3 +88,6 @@
 [submodule "bundle/ridoc"]
 	path = bundle/ridoc
 	url = git@github.com:danchoi/ri.vim.git
+[submodule "bundle/solidity"]
+	path = bundle/solidity
+	url = git@github.com:tomlion/vim-solidity.git
