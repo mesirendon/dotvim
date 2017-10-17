@@ -40,7 +40,7 @@ if has('gui_running')
     set background=light
     colorscheme sift
 else
-    colorscheme xoria256
+    colorscheme dark-ruby
 endif
 
 " Use Vim settings, rather than Vi settings

@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases gem git git-extras gitignore git-flow grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant)
+plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -81,8 +81,15 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.rvm/bin:/opt/gams/gams24.8_linux_x64_64_sfx:/usr/local/lib/antlr-4.7-complete.jar"
+export PATH="$HOME/.rvm/scripts/rvm/:$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/gams/gams24.8_linux_x64_64_sfx"
 
+export CLASSPATH=".:/usr/local/lib/antlr-4.7-complete.jar:$CLASSPATH"
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
 
 # # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -103,6 +110,8 @@ alias weather="curl -4 http://wttr.in/bogota"
 alias lc="colorls -sd -r -a"
 alias gams=/opt/gams/gams24.8_linux_x64_64_sfx/gams
 alias gamslib=/opt/gams/gams24.8_linux_x64_64_sfx/gamslib
+alias antlr='java -jar /usr/local/lib/antlr-4.7-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
 
 mkcd(){
 	mkdir $1
