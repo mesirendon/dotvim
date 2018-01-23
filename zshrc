@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant)
+plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -210,9 +210,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" ]]
-
-export GCLOUD_DIR="$HOME/.gcloud/google-cloud-sdk"
-source "$GCLOUD_DIR/completion.zsh.inc" "$GCLOUD_DIR/path.zsh.inc"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/mesi/.sdkman"

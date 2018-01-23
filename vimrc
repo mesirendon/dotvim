@@ -17,6 +17,7 @@ let Tlist_Use_Right_Window = 1
 map <Esc>[B <Down>]
 map <F3> :NERDTreeToggle<CR><CR>
 map <F4> :TlistToggle<CR><CR>
+nnoremap qq :w\|bd<cr>
 
 filetype plugin on
 filetype indent on
@@ -40,7 +41,7 @@ if has('gui_running')
     set background=light
     colorscheme sift
 else
-    colorscheme dark-ruby
+    colorscheme xoria256
 endif
 
 " Use Vim settings, rather than Vi settings
