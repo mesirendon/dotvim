@@ -38,9 +38,9 @@ if has('gui_running')
         set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
     endif
     set background=light
-    colorscheme sift
+    colorscheme google
 else
-    colorscheme dark-ruby
+    colorscheme google
 endif
 
 " Use Vim settings, rather than Vi settings

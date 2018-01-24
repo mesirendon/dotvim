@@ -210,10 +210,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" ]]
-
-export GCLOUD_DIR="$HOME/.gcloud/google-cloud-sdk"
-source "$GCLOUD_DIR/completion.zsh.inc" "$GCLOUD_DIR/path.zsh.inc"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mesi/.sdkman"
-[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
