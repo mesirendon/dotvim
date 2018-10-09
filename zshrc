@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji)
+plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow gcloud go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/.rvm/scripts/rvm/:$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/gams/gams24.8_linux_x64_64_sfx"
+export PATH="$HOME/.rvm/scripts/rvm/:$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 export CLASSPATH=".:/usr/local/lib/antlr-4.7-complete.jar:$CLASSPATH"
 
@@ -112,10 +112,21 @@ alias gams=/opt/gams/gams24.8_linux_x64_64_sfx/gams
 alias gamslib=/opt/gams/gams24.8_linux_x64_64_sfx/gamslib
 alias antlr='java -jar /usr/local/lib/antlr-4.7-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
+alias tcom='truffle compile'
+alias tcon='truffle console'
+alias tmig='truffle migrate'
+alias tmie='truffle migrate --reset --compile-all && truffle console'
+alias dcomp='docker-compose'
+
+PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
 
 mkcd(){
 	mkdir $1
 	cd $1
+}
+
+slacky () {
+  slack-term --config ~/.slacky/$1.json
 }
 
 tellme(){
@@ -204,9 +215,13 @@ function proxy_off(){
 	echo -e "Proxy environment variable removed."
 }
 
-(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
+#(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" ]]
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/mesi/.sdkman"
+[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
