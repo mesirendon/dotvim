@@ -73,6 +73,9 @@ if version >= 700
     map <C-F12> <Esc>:tabclose<CR>
 endif
 
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab> :tabnext<CR>
+
 " Turn on line numbers
 set number
 set numberwidth=5

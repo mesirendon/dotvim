@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow gcloud go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji)
+plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow gcloud go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji terraform)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -217,11 +217,7 @@ function proxy_off(){
 
 #(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" ]]
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mesi/.sdkman"
-[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
