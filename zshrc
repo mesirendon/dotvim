@@ -117,6 +117,7 @@ alias tcon='truffle console'
 alias tmig='truffle migrate'
 alias tmie='truffle migrate --reset --compile-all && truffle console'
 alias dcomp='docker-compose'
+alias xclip='xclip -sel clip'
 
 PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
 
