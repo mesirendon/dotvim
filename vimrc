@@ -59,7 +59,7 @@ nmap <silent> <Right> :wincmd l<CR>
 
 " Move tabs with alt + left|right
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . ( tabpagenr()+1 )<CR>
 
 " Get out of my realm
 "nnoremap <Left>  :echoe "Use h"<CR>
@@ -73,8 +73,8 @@ if version >= 700
     map <C-F12> <Esc>:tabclose<CR>
 endif
 
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab> :tabnext<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 " Turn on line numbers
 set number
