@@ -41,7 +41,7 @@ export UPDATE_ZSH_DAYS=8
 
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
+  # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -81,9 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/.rvm/scripts/rvm/:$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-
-export CLASSPATH=".:/usr/local/lib/antlr-4.7-complete.jar:$CLASSPATH"
+export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.yarn/bin"
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
@@ -103,27 +101,22 @@ fi
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/"
-alias grork="echo 'Synchronizing drive...' && (cd ~/Documents/Work/voice123 && grive) && echo 'Sync done'"
-alias gruni="echo 'Synchronizing drive...' && (cd ~/Documents/University && grive) && echo 'Sync done'"
 alias glo="git log --oneline --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'"
 alias weather="curl -4 http://wttr.in/bogota"
 alias lc="colorls -sd -r -a"
-alias gams=/opt/gams/gams24.8_linux_x64_64_sfx/gams
-alias gamslib=/opt/gams/gams24.8_linux_x64_64_sfx/gamslib
-alias antlr='java -jar /usr/local/lib/antlr-4.7-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
 alias tcom='truffle compile'
 alias tcon='truffle console'
 alias tmig='truffle migrate'
 alias tmie='truffle migrate --reset --compile-all && truffle console'
 alias dcomp='docker-compose'
 alias xclip='xclip -sel clip'
+alias fuck='sudo $(fc -ln -1)'
 
 PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
 
 mkcd(){
-	mkdir $1
-	cd $1
+  mkdir -p $1
+  cd $1
 }
 
 slacky () {
@@ -131,94 +124,69 @@ slacky () {
 }
 
 tellme(){
-	dict $1 | less
+  dict $1 | less
 }
 mycnc() {
-	mysql --defaults-group-suffix=$1
+  mysql --defaults-group-suffix=$1
 }
 
 myRecordingVoiceAndAudio(){
-	pactl load-module module-null-sink sink_name=duplex_out
-	pactl load-module module-null-sink sink_name=game_out
-	pactl load-module module-loopback source=game_out.monitor
-	pactl load-module module-loopback source=game_out.monitor sink=duplex_out
-	pactl load-module module-loopback sink=duplex_out
+  pactl load-module module-null-sink sink_name=duplex_out
+  pactl load-module module-null-sink sink_name=game_out
+  pactl load-module module-loopback source=game_out.monitor
+  pactl load-module module-loopback source=game_out.monitor sink=duplex_out
+  pactl load-module module-loopback sink=duplex_out
 }
 
 myUnloadRecordingVoiceAndAudio(){
-	pactl unload-module module-loopback
-	pactl unload-module module-null-sink
-}
-
-unproxycli() {
-	export https_proxy="https://168.176.239.41:8080"
-	export socks_proxy="http://168.176.239.41:8080"
-	export gopher_proxy="http://168.176.239.41:8080"
-	export ftp_proxy="http://168.176.239.41:8080"
-	export http_proxy="http://168.176.239.41:8080"
-	export no_proxy="http://168.176.239.41:8080"
-	export ssh_proxy="http://168.176.239.41:8080"
-}
-
-unproxycli2() {
-	export https_proxy="https://168.176.55.16:8080"
-	export socks_proxy="http://168.176.55.16:8080"
-	export gopher_proxy="http://168.176.55.16:8080"
-	export ftp_proxy="http://168.176.55.16:8080"
-	export http_proxy="http://168.176.55.16:8080"
-	export no_proxy="http://168.176.55.16:8080"
-	export ssh_proxy="http://168.176.55.16:8080"
+  pactl unload-module module-loopback
+  pactl unload-module module-null-sink
 }
 
 function proxy_on() {
-	export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
-	if (( $# > 0 )); then
-		valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\)\{4\}:\([0-9]\+\)/&/p')
-		if [[ $valid != $@ ]]; then
-			>&2 echo "Invalid address"
-			return 1
-		fi
+  if (( $# > 0 )); then
+    valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\)\{4\}:\([0-9]\+\)/&/p')
+    if [[ $valid != $@ ]]; then
+      >&2 echo "Invalid address"
+      return 1
+    fi
 
-		export http_proxy="http://$1/"
-		export https_proxy=$http_proxy
-		export ftp_proxy=$http_proxy
-		export rsync_proxy=$http_proxy
-		echo "Proxy environment variable set."
-		return 0
-	fi
+    export http_proxy="http://$1/"
+    export https_proxy=$http_proxy
+    export ftp_proxy=$http_proxy
+    export rsync_proxy=$http_proxy
+    echo "Proxy environment variable set."
+    return 0
+  fi
 
-	echo -n "username: "; read username
-	pre=""
-	if [[ $username != "" ]]; then
-		echo -n "password: \n"
-		read -s password
-		pre="$username:$password@"
-	fi
+  echo -n "username: "; read username
+  pre=""
+  if [[ $username != "" ]]; then
+    echo -n "password: \n"
+    read -s password
+    pre="$username:$password@"
+  fi
 
-	echo -n "server: "; read server
-	echo -n "port: "; read port
-	export http_proxy="http://$pre$server:$port/"
-	export https_proxy="https://$pre$server:$port/"
-	export ftp_proxy=$http_proxy
-	export rsync_proxy=$http_proxy
-	export socks_proxy=$http_proxy
-	export gopher_proxy=$http_proxy
-	export http_proxy=$http_proxy
-	export no_proxy=$http_proxy
+  echo -n "server: "; read server
+  echo -n "port: "; read port
+  export http_proxy="http://$pre$server:$port/"
+  export https_proxy="https://$pre$server:$port/"
+  export ftp_proxy=$http_proxy
+  export rsync_proxy=$http_proxy
+  export socks_proxy=$http_proxy
+  export gopher_proxy=$http_proxy
+  export http_proxy=$http_proxy
+  export no_proxy=$http_proxy
 }
 
 function proxy_off(){
-	unset http_proxy
-	unset https_proxy
-	unset ftp_proxy
-	unset rsync_proxy
-	echo -e "Proxy environment variable removed."
+  unset http_proxy
+  unset https_proxy
+  unset ftp_proxy
+  unset rsync_proxy
+  echo -e "Proxy environment variable removed."
 }
 
-#(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
