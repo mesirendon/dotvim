@@ -111,6 +111,7 @@ alias tmie='truffle migrate --reset --compile-all && truffle console'
 alias dcomp='docker-compose'
 alias xclip='xclip -sel clip'
 alias fuck='sudo $(fc -ln -1)'
+alias sysupdate='sudo apt update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -y autoremove && sudo apt -y autoclean'
 
 PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
 
