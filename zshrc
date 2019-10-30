@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow gcloud go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji terraform)
+plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji terraform)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -86,6 +86,13 @@ export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/cuda/bin
+
+export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
+export ANDROID_HOME="/usr/lib/android/sdk/"
+export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
+
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
@@ -104,10 +111,12 @@ export SSH_KEY_PATH="~/.ssh/"
 alias glo="git log --oneline --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'"
 alias weather="curl -4 http://wttr.in/bogota"
 alias lc="colorls -sd -r -a"
+alias ganache='clear && ganache-cli'
 alias tcom='truffle compile'
-alias tcon='truffle console'
+alias tcon='clear && truffle console'
 alias tmig='truffle migrate'
 alias tmie='truffle migrate --reset --compile-all && truffle console'
+alias ttest='clear && truffle test'
 alias dcomp='docker-compose'
 alias xclip='xclip -sel clip'
 alias fuck='sudo $(fc -ln -1)'
@@ -191,3 +200,7 @@ function proxy_off(){
 }
 
 (fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

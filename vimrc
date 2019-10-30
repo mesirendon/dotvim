@@ -41,8 +41,8 @@ if has('gui_running')
     set background=light
     colorscheme monokai-chris
 else
-    "colorscheme Monokai
-    colorscheme monokai-chris
+    colorscheme Light
+    "colorscheme monokai-chris
 endif
 
 " Use Vim settings, rather than Vi settings
