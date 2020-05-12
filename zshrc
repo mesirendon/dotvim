@@ -89,9 +89,10 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/cuda/bin
 
+export ANDROID_HOME="/usr/lib/android/sdk"
+export PATH=$PATH:${ANDROID_HOME}/tools/:${ANDROID_HOME}/tools/bin/:${ANDROID_HOME}/platform-tools/:${ANDROID_HOME}/emulator/
+
 export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
-export ANDROID_HOME="/usr/lib/android/sdk/"
-export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -204,3 +205,13 @@ function proxy_off(){
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/mesi/.sdkman"
+[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
+
+###-tns-completion-start-###
+if [ -f /home/mesi/.tnsrc ]; then 
+    source /home/mesi/.tnsrc 
+fi
+###-tns-completion-end-###
