@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bower bundler colored-man-pages colorize common-aliases docker docker-compose docker-machine gem git git-extras gitignore git-flow go grunt gulp heroku man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload rvm rails rake rbenv ruby vagrant emoji terraform)
+plugins=(common-aliases docker docker-compose docker-machine git git-extras gitignore git-flow go man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload vagrant emoji)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -68,7 +68,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm ip load ram context)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version ip load ram context)
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
@@ -137,21 +137,9 @@ slacky () {
 tellme(){
   dict $1 | less
 }
+
 mycnc() {
   mysql --defaults-group-suffix=$1
-}
-
-myRecordingVoiceAndAudio(){
-  pactl load-module module-null-sink sink_name=duplex_out
-  pactl load-module module-null-sink sink_name=game_out
-  pactl load-module module-loopback source=game_out.monitor
-  pactl load-module module-loopback source=game_out.monitor sink=duplex_out
-  pactl load-module module-loopback sink=duplex_out
-}
-
-myUnloadRecordingVoiceAndAudio(){
-  pactl unload-module module-loopback
-  pactl unload-module module-null-sink
 }
 
 function proxy_on() {
@@ -200,18 +188,19 @@ function proxy_off(){
   echo -e "Proxy environment variable removed."
 }
 
-(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
+#(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mesi/.sdkman"
-[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
 
 ###-tns-completion-start-###
 if [ -f /home/mesi/.tnsrc ]; then 
     source /home/mesi/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/mesi/.sdkman"
+[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
+
