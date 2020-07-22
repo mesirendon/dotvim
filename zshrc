@@ -70,12 +70,13 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version ip load ram context)
 
-POWERLEVEL9K_OS_ICON_BACKGROUND="white"
-POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_BATTERY_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+#POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+#POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+#POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+#POWERLEVEL9K_BATTERY_FOREGROUND="white"
+#POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+#POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+#POWERLEVEL9K_COLOR_SCHEME='light'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,6 +122,7 @@ alias ttest='clear && truffle test'
 alias dcomp='docker-compose'
 alias xclip='xclip -sel clip'
 alias fuck='sudo $(fc -ln -1)'
+alias rm='rm -rf'
 alias sysupdate='sudo apt update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -y autoremove && sudo apt -y autoclean'
 
 PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
