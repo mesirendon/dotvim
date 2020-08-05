@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(common-aliases docker docker-compose docker-machine git git-extras gitignore git-flow go man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload vagrant emoji)
+plugins=(common-aliases docker docker-compose docker-machine git git-extras gitignore git-flow man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload vagrant emoji)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -68,7 +68,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version ip load ram context)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version public_ip vpn_ip load ram context)
 
 #POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 #POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
