@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh configuration.
@@ -47,7 +54,7 @@ export UPDATE_ZSH_DAYS=8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(common-aliases docker docker-compose docker-machine git git-extras gitignore git-flow man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools zsh_reload vagrant emoji)
+plugins=(common-aliases docker docker-compose docker-machine git-extras git gitignore git-flow man mvn node npm nvm pip postgres sbt scala sudo themes ubuntu zsh-navigation-tools vagrant emoji golang)
 
 # Powerline customization
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -68,7 +75,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version public_ip vpn_ip load ram context)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version vpn_ip load ram context)
 
 #POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 #POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
@@ -82,18 +89,13 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/.bin/:$HOME/.ssh/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.yarn/bin"
-
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/cuda/bin
-
-export ANDROID_HOME="/usr/lib/android/sdk"
-export PATH=$PATH:${ANDROID_HOME}/tools/:${ANDROID_HOME}/tools/bin/:${ANDROID_HOME}/platform-tools/:${ANDROID_HOME}/emulator/
-
 export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$JAVA_HOME:$HOME/.bin/:$HOME/.ssh/:$HOME/bitcoin/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-studio/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/tools/"
+
+export PATH="$PATH:/usr/local/go/bin"
+
+export GOPATH="$HOME/go"
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -110,9 +112,11 @@ fi
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/"
-alias glo="git log --oneline --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'"
+#alias glo="git log --oneline --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'"
 alias weather="curl -4 http://wttr.in/bogota"
-alias lc="colorls -sd -r -a"
+alias lc="colorls -l --sd"
+alias lca="colorls -lA --sd"
+alias l="lc"
 alias ganache='clear && ganache-cli'
 alias tcom='truffle compile'
 alias tcon='clear && truffle console'
@@ -123,6 +127,7 @@ alias dcomp='docker-compose'
 alias xclip='xclip -sel clip'
 alias fuck='sudo $(fc -ln -1)'
 alias rm='rm -rf'
+alias hhat='clear && npx hardhat'
 alias sysupdate='sudo apt update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -y autoremove && sudo apt -y autoclean'
 
 PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
@@ -192,17 +197,25 @@ function proxy_off(){
 
 #(fortune; echo "\nImportant dates:\n"; calendar -l 0) | cowthink -f eyes
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 ###-tns-completion-start-###
 if [ -f /home/mesi/.tnsrc ]; then 
     source /home/mesi/.tnsrc 
 fi
 ###-tns-completion-end-###
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mesi/.sdkman"
-[[ -s "/home/mesi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mesi/.sdkman/bin/sdkman-init.sh"
-
